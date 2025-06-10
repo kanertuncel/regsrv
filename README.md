@@ -30,7 +30,7 @@ import whois from "regsrv";
 
 async function getDomainInfo() {
   try {
-    const data = await whois("google.com");
+    const data = await whois("eib.org");
     console.log(JSON.stringify(data, null, 2));
   } catch (error) {
     console.error(error);
@@ -42,11 +42,11 @@ getDomainInfo();
 
 ### Example Output
 
-A successful lookup for `google.com` will return an object like this:
+A successful lookup for `eib.org` will return an object like this:
 
 ```json
 {
-  "domainName": "google.com",
+  "domainName": "eib.org",
   "createdAt": "1997-09-15T04:00:00Z",
   "updatedAt": "2019-09-09T15:39:04Z",
   "expiresAt": "2028-09-14T04:00:00Z",
@@ -55,14 +55,9 @@ A successful lookup for `google.com` will return an object like this:
     "ianaId": "292"
   },
   "registrant": {
-    "organization": "Google LLC"
+    "organization": "Clean Oceans"
   },
-  "nameservers": [
-    "ns1.google.com",
-    "ns2.google.com",
-    "ns3.google.com",
-    "ns4.google.com"
-  ],
+  "nameservers": ["ns1.eib.org", "ns2.eib.org"],
   "status": [
     "client delete prohibited",
     "client transfer prohibited",
@@ -122,7 +117,7 @@ whois("github.com")
 ```javascript
 import whois from "regsrv";
 
-const domains = ["google.com", "npmjs.com", "github.com"];
+const domains = ["eib.org", "npmjs.com", "github.com"];
 Promise.all(domains.map(whois))
   .then((results) => {
     results.forEach((data) => console.log(data.domainName, data));
@@ -139,7 +134,7 @@ Promise.all(domains.map(whois))
 You can also use the CLI:
 
 ```sh
-npx rdap google.com
+npx rdap eib.org
 ```
 
 ---

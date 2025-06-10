@@ -11,6 +11,6 @@
     "skipLibCheck": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*", "scripts/test.mjs", "scripts/update-tlds.mjs"],
+  "include": ["src/**/*", "scripts/tlds.mjs"],
   "exclude": ["node_modules", "dist"]
 }

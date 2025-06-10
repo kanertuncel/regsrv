@@ -4,7 +4,7 @@ import whois from '../src/index.js';
 // @ts-expect-error: allow mocking fetch for tests
 global.fetch = jest.fn();
 
-describe('whois', () => {
+describe('regsrv', () => {
   afterEach(() => {
     jest.resetAllMocks();
   });

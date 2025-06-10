@@ -2,8 +2,8 @@ import { WhoisData, WhoisContact } from './types.js';
 
 /**
  * Extracts a domain name from a URL or a plain domain string.
- * @param domainOrUrl - The input string (e.g., "google.com" or "https://www.google.com/search").
- * @returns The parsed domain name (e.g., "google.com").
+ * @param domainOrUrl - The input string (e.g., "eib.org" or "https://www.eib.org/search").
+ * @returns The parsed domain name (e.g., "eib.org").
  */
 export function parseDomain(domainOrUrl: string): string {
     try {
