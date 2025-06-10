@@ -134,7 +134,7 @@ Promise.all(domains.map(whois))
 You can also use the CLI:
 
 ```sh
-npx rdap eib.org
+npx regsrv eib.org
 ```
 
 ---
