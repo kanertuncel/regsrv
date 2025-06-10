@@ -1,5 +1,5 @@
 {
-  "name": "@doping/whois",
+  "name": "rdap-client",
   "version": "1.0.0",
   "description": "A modern, fast, and lightweight RDAP client for Node.js to look up domain information.",
   "type": "module",
@@ -52,6 +52,6 @@
     "access": "public"
   },
   "bin": {
-    "whois": "dist/cli.js"
+    "rdap": "dist/cli.js"
   }
 }

@@ -1,11 +1,10 @@
-# @doping/whois
+# rdap-client
 
-[![npm version](https://badge.fury.io/js/@doping/whois.svg)](https://badge.fury.io/js/@doping/whois)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://badge.fury.io/js/rdap-client.svg)](https://badge.fury.io/js/rdap-client)
 
 A modern, fast, and lightweight WHOIS/RDAP client for Node.js.
 
-`whois` queries domain information using the modern **RDAP (Registration Data Access Protocol)**, the official successor to the legacy WHOIS protocol. It automatically finds the correct authoritative server for any given TLD based on IANA's official list and returns a clean, standardized JSON object.
+`rdap-client` queries domain information using the modern **RDAP (Registration Data Access Protocol)**, the official successor to the legacy WHOIS protocol. It automatically finds the correct authoritative server for any given TLD based on IANA's official list and returns a clean, standardized JSON object.
 
 ## Features
 
@@ -19,7 +18,7 @@ A modern, fast, and lightweight WHOIS/RDAP client for Node.js.
 ## Installation
 
 ```bash
-npm install @doping/whois
+npm install rdap-client
 ```
 
 Requires Node.js v18.0.0 or higher.
@@ -27,7 +26,7 @@ Requires Node.js v18.0.0 or higher.
 ## Usage
 
 ```javascript
-import whois from "@doping/whois";
+import whois from "rdap-client";
 
 async function getDomainInfo() {
   try {
@@ -83,7 +82,7 @@ A successful lookup for `google.com` will return an object like this:
 ### Error Handling
 
 ```javascript
-import whois from "@doping/whois";
+import whois from "rdap-client";
 
 async function safeLookup(domain) {
   try {
@@ -107,7 +106,7 @@ safeLookup("invalid.tld");
 ### Using with Promise.then
 
 ```javascript
-import whois from "@doping/whois";
+import whois from "rdap-client";
 
 whois("github.com")
   .then((data) => {
@@ -121,7 +120,7 @@ whois("github.com")
 ### Using in Parallel (Promise.all)
 
 ```javascript
-import whois from "@doping/whois";
+import whois from "rdap-client";
 
 const domains = ["google.com", "npmjs.com", "github.com"];
 Promise.all(domains.map(whois))
@@ -140,7 +139,7 @@ Promise.all(domains.map(whois))
 You can also use the CLI:
 
 ```sh
-npx whois google.com
+npx rdap google.com
 ```
 
 ---

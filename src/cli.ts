@@ -5,7 +5,7 @@ const [, , ...args] = process.argv;
 const input = args[0];
 
 if (!input) {
-  console.error('Usage: whois <domain|url>');
+  console.error('Usage: rdap <domain|url>');
   process.exit(1);
 }
 
