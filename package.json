@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kanertuncel/whois.git"
+    "url": "git+https://github.com/kanertuncel/regsrv.git"
   },
   "keywords": [
     "whois",
@@ -35,9 +35,9 @@
   "author": "Kaner TUNCEL <kanertunc@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kanertunc/whois/issues"
+    "url": "https://github.com/kanertuncel/regsrv/issues"
   },
-  "homepage": "https://github.com/kanertuncel/whois#readme",
+  "homepage": "https://github.com/kanertuncel/regsrv#readme",
   "engines": {
     "node": ">=18.0.0"
   },
