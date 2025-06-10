@@ -1,10 +1,10 @@
-# rdap-client
+# regsrv
 
-[![npm version](https://badge.fury.io/js/rdap-client.svg)](https://badge.fury.io/js/rdap-client)
+[![npm version](https://badge.fury.io/js/regsrv.svg)](https://badge.fury.io/js/regsrv)
 
 A modern, fast, and lightweight WHOIS/RDAP client for Node.js.
 
-`rdap-client` queries domain information using the modern **RDAP (Registration Data Access Protocol)**, the official successor to the legacy WHOIS protocol. It automatically finds the correct authoritative server for any given TLD based on IANA's official list and returns a clean, standardized JSON object.
+`regsrv` queries domain information using the modern **RDAP (Registration Data Access Protocol)**, the official successor to the legacy WHOIS protocol. It automatically finds the correct authoritative server for any given TLD based on IANA's official list and returns a clean, standardized JSON object.
 
 ## Features
 
@@ -18,7 +18,7 @@ A modern, fast, and lightweight WHOIS/RDAP client for Node.js.
 ## Installation
 
 ```bash
-npm install rdap-client
+npm install regsrv
 ```
 
 Requires Node.js v18.0.0 or higher.
@@ -26,7 +26,7 @@ Requires Node.js v18.0.0 or higher.
 ## Usage
 
 ```javascript
-import whois from "rdap-client";
+import whois from "regsrv";
 
 async function getDomainInfo() {
   try {
@@ -82,7 +82,7 @@ A successful lookup for `google.com` will return an object like this:
 ### Error Handling
 
 ```javascript
-import whois from "rdap-client";
+import whois from "regsrv";
 
 async function safeLookup(domain) {
   try {
@@ -106,7 +106,7 @@ safeLookup("invalid.tld");
 ### Using with Promise.then
 
 ```javascript
-import whois from "rdap-client";
+import whois from "regsrv";
 
 whois("github.com")
   .then((data) => {
@@ -120,7 +120,7 @@ whois("github.com")
 ### Using in Parallel (Promise.all)
 
 ```javascript
-import whois from "rdap-client";
+import whois from "regsrv";
 
 const domains = ["google.com", "npmjs.com", "github.com"];
 Promise.all(domains.map(whois))

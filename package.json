@@ -1,5 +1,5 @@
 {
-  "name": "rdap-client",
+  "name": "regsrv",
   "version": "1.0.0",
   "description": "A modern, fast, and lightweight RDAP client for Node.js to look up domain information.",
   "type": "module",
