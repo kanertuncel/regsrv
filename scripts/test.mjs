@@ -1,4 +1,4 @@
-import whojs from '../dist/index.js';
+import @doping/whois from '../dist/index.js';
 import { writeFile } from 'fs/promises';
 
 async function testDomains() {
@@ -30,7 +30,7 @@ async function testDomains() {
   for (const domain of domains) {
     try {
       console.log(`\n--- Looking up ${domain} ---`);
-      const data = await whojs(domain);
+      const data = await @doping/whois(domain);
       results[domain] = data;
       console.log(JSON.stringify(data, null, 2));
     } catch (error) {

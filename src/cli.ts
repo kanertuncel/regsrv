@@ -1,17 +1,17 @@
 #!/usr/bin/env node
-import whojs from './index.js';
+import whois from './index.js';
 
 const [, , ...args] = process.argv;
 const input = args[0];
 
 if (!input) {
-  console.error('Usage: whojs <domain|url>');
+  console.error('Usage: whois <domain|url>');
   process.exit(1);
 }
 
 (async () => {
   try {
-    const data = await whojs(input);
+    const data = await whois(input);
     console.log(JSON.stringify(data, null, 2));
   } catch (err) {
     if (err instanceof Error) {

@@ -39,7 +39,7 @@ class NetworkError extends Error {
     }
 }
 
-export async function whojs(domainOrUrl: string): Promise<WhoisData> {
+export async function whois(domainOrUrl: string): Promise<WhoisData> {
     const domain = parseDomain(domainOrUrl);
     if (!domain) throw new Error('Invalid domain or URL provided.');
 
@@ -82,5 +82,5 @@ export async function whojs(domainOrUrl: string): Promise<WhoisData> {
     }
 }
 
-// Export a default for convenience (e.g., import whojs from 'whojs')
-export default whojs;
+// Export a default for convenience (e.g., import whois from '@doping/whois')
+export default whois;

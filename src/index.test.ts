@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals';
-import whois from '../src/index.js';
+import whois from './index.js';
 
 // @ts-expect-error: allow mocking fetch for tests
 global.fetch = jest.fn();

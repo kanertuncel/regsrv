@@ -1,11 +1,11 @@
-# whojs
+# @doping/whois
 
-[![npm version](https://badge.fury.io/js/whojs.svg)](https://badge.fury.io/js/whojs)
+[![npm version](https://badge.fury.io/js/@doping/whois.svg)](https://badge.fury.io/js/@doping/whois)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A modern, fast, and lightweight WHOIS/RDAP client for Node.js.
 
-`whojs` queries domain information using the modern **RDAP (Registration Data Access Protocol)**, the official successor to the legacy WHOIS protocol. It automatically finds the correct authoritative server for any given TLD based on IANA's official list and returns a clean, standardized JSON object.
+`whois` queries domain information using the modern **RDAP (Registration Data Access Protocol)**, the official successor to the legacy WHOIS protocol. It automatically finds the correct authoritative server for any given TLD based on IANA's official list and returns a clean, standardized JSON object.
 
 ## Features
 
@@ -19,7 +19,7 @@ A modern, fast, and lightweight WHOIS/RDAP client for Node.js.
 ## Installation
 
 ```bash
-npm install whojs
+npm install @doping/whois
 ```
 
 Requires Node.js v18.0.0 or higher.
@@ -27,11 +27,11 @@ Requires Node.js v18.0.0 or higher.
 ## Usage
 
 ```javascript
-import whojs from "whojs";
+import whois from "@doping/whois";
 
 async function getDomainInfo() {
   try {
-    const data = await whojs("google.com");
+    const data = await whois("google.com");
     console.log(JSON.stringify(data, null, 2));
   } catch (error) {
     console.error(error);
@@ -83,11 +83,11 @@ A successful lookup for `google.com` will return an object like this:
 ### Error Handling
 
 ```javascript
-import whojs from "whojs";
+import whois from "@doping/whois";
 
 async function safeLookup(domain) {
   try {
-    const data = await whojs(domain);
+    const data = await whois(domain);
     console.log("Domain info:", data);
   } catch (err) {
     if (err.message.includes("Unsupported TLD")) {
@@ -107,13 +107,13 @@ safeLookup("invalid.tld");
 ### Using with Promise.then
 
 ```javascript
-import whojs from "whojs";
+import whois from "@doping/whois";
 
-whojs("github.com")
-  .then(data => {
+whois("github.com")
+  .then((data) => {
     console.log("Got data:", data);
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("Error:", err);
   });
 ```
@@ -121,16 +121,26 @@ whojs("github.com")
 ### Using in Parallel (Promise.all)
 
 ```javascript
-import whojs from "whojs";
+import whois from "@doping/whois";
 
 const domains = ["google.com", "npmjs.com", "github.com"];
-Promise.all(domains.map(whojs))
-  .then(results => {
-    results.forEach(data => console.log(data.domainName, data));
+Promise.all(domains.map(whois))
+  .then((results) => {
+    results.forEach((data) => console.log(data.domainName, data));
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("One of the lookups failed:", err);
   });
+```
+
+---
+
+## CLI Usage
+
+You can also use the CLI:
+
+```sh
+npx whois google.com
 ```
 
 ---
@@ -157,42 +167,42 @@ The main lookup function returns a strongly-typed object. Here are the types:
 
 ```typescript
 export interface WhoisContact {
-    name?: string;
-    organization?: string;
-    email?: string;
+  name?: string;
+  organization?: string;
+  email?: string;
 }
 
 export interface WhoisData {
-    domainName: string;
-    // Dates in ISO 8601 format (YYYY-MM-DDTHH:mm:ssZ)
-    createdAt?: string;
-    updatedAt?: string;
-    expiresAt?: string;
+  domainName: string;
+  // Dates in ISO 8601 format (YYYY-MM-DDTHH:mm:ssZ)
+  createdAt?: string;
+  updatedAt?: string;
+  expiresAt?: string;
 
-    registrar: {
-        name?: string;
-        ianaId?: string;
-        url?: string;
-    };
+  registrar: {
+    name?: string;
+    ianaId?: string;
+    url?: string;
+  };
 
-    registrant?: WhoisContact;
+  registrant?: WhoisContact;
 
-    nameservers: string[];
+  nameservers: string[];
 
-    status: string[];
+  status: string[];
 
-    // The raw RDAP response for advanced use cases
-    raw: any;
+  // The raw RDAP response for advanced use cases
+  raw: any;
 }
 ```
 
 ## API
 
-### `whojs(domainOrUrl: string): Promise<WhoisData>`
+### `whois(domainOrUrl: string): Promise<WhoisData>`
 
 Looks up domain information.
 
-- **`domainOrUrl`**: The string to look up. Can be a simple domain (`github.com`) or a full URL (`https://www.npmjs.com/package/whoiser`).
+- **`domainOrUrl`**: The string to look up. Can be a simple domain (`github.com`) or a full URL (`https://www.`).
 - **Returns**: A `Promise` that resolves to a `WhoisData` object.
 - **Throws**: An `Error` if the TLD is unsupported, the domain is not found (404), or a network error occurs.
 

@@ -1,5 +1,5 @@
 {
-  "name": "whojs",
+  "name": "@doping/whois",
   "version": "1.0.0",
   "description": "A modern, fast, and lightweight RDAP client for Node.js to look up domain information.",
   "type": "module",
@@ -22,7 +22,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kanertuncel/whojs.git"
+    "url": "git+https://github.com/kanertuncel/@doping/whois.git"
   },
   "keywords": [
     "whois",
@@ -35,9 +35,9 @@
   "author": "Kaner TUNCEL <kanertunc@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kanertunc/whojs/issues"
+    "url": "https://github.com/kanertunc/@doping/whois/issues"
   },
-  "homepage": "https://github.com/kanertuncel/whojs#readme",
+  "homepage": "https://github.com/kanertuncel/@doping/whois#readme",
   "engines": {
     "node": ">=18.0.0"
   },
@@ -48,7 +48,10 @@
     "ts-jest": "^29.3.4",
     "typescript": "^5.1.6"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "bin": {
-    "whojs": "./dist/cli.js"
+    "whois": "dist/cli.js"
   }
 }
