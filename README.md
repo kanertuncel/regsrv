@@ -1,7 +1,5 @@
 # regsrv
 
-[![npm version](https://badge.fury.io/js/regsrv.svg)](https://badge.fury.io/js/regsrv)
-
 A modern, fast, and lightweight WHOIS/RDAP client for Node.js.
 
 `regsrv` queries domain information using the modern **RDAP (Registration Data Access Protocol)**, the official successor to the legacy WHOIS protocol. It automatically finds the correct authoritative server for any given TLD based on IANA's official list and returns a clean, standardized JSON object.
